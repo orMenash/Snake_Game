@@ -19,5 +19,10 @@ snake_t create_snake(uint8_t x, uint8_t y) {
 }
 // Free snake’s memory (remember: it’s a double pointer array!)
 void free_snake(snake_t snake, size_t snake_size) {
-
+	int i;
+	if (snake == NULL) return;
+	for (i = 0; i < snake_size; i++) {
+		free((*snake) + i);
+	}
+	free(snake);
 }

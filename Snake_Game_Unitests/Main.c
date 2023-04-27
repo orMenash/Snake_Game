@@ -7,7 +7,7 @@
 
 #include "Header.h"
 #include "create_snake_tests.h"
-
+#include "free_snake_tests.h"
 
 // ----- git ----
 // 1. added functionality of <name_function> and several unit tests,   //start function.
@@ -24,6 +24,10 @@ int main() {
 	bool isOk = 1;
 
 	isOk &= (0 == what_return_when_get_good_numbers());
+
+	//-----fee_snake tests -----------------
+	isOk &= (0 == get_null_snake());
+
 
 	printf("%d\n\n", isOk);
 
