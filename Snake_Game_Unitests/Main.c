@@ -8,6 +8,7 @@
 #include "Header.h"
 #include "create_snake_tests.h"
 #include "free_snake_tests.h"
+#include "grow_snake_tests.h"
 
 // ----- git ----
 // 1. added functionality of <name_function> and several unit tests,   //start function.
@@ -25,9 +26,15 @@ int main() {
 
 	isOk &= (0 == what_return_when_get_good_numbers());
 
-	//-----fee_snake tests -----------------
+	//-----free_snake tests -----------------
 	isOk &= (0 == get_null_snake());
 
+	//----- grow_snake tests ----------------
+	isOk &= (0 == grow_snake__When_UP());
+	isOk &= (0 == grow_snake__When_DOWN());
+	isOk &= (0 == grow_snake__When_RIGHT());
+	isOk &= (0 == grow_snake__When_LEFT());
+	isOk &= (0 == grow_snake__When_MultipleCalls());
 
 	printf("%d\n\n", isOk);
 

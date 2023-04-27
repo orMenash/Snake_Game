@@ -22,7 +22,46 @@ void free_snake(snake_t snake, size_t snake_size) {
 	int i;
 	if (snake == NULL) return;
 	for (i = 0; i < snake_size; i++) {
-		free((*snake) + i);
+		free(*(snake + i));
 	}
 	free(snake);
 }
+
+size_t grow_snake(snake_t* snake_ptr, size_t snake_size, direction_t direction) {
+
+	snake_t new_snake_ptr = NULL;
+	if (snake_ptr == NULL) return 1;
+
+	new_snake_ptr = (snake_t)realloc(*snake_ptr, (snake_size + 1) * sizeof(uint8_t*) );
+	if (new_snake_ptr == NULL) return 1; // If allocet fialed.
+	
+	new_snake_ptr[snake_size] = (uint8_t*)malloc(2 * sizeof(uint8_t) );
+	if (new_snake_ptr[snake_size] == NULL) return 1; // If allocet fialed.
+
+	// Update the new element based on the direction.
+
+	new_snake_ptr[snake_size][0] = new_snake_ptr[snake_size - 1][0];
+	new_snake_ptr[snake_size][1] = new_snake_ptr[snake_size - 1][1];
+
+	switch (direction) {
+	case UP:
+		new_snake_ptr[snake_size][1] -= 1;
+		break;
+	case DOWN:
+		new_snake_ptr[snake_size][1] += 1;
+		break;
+	case LEFT:
+		new_snake_ptr[snake_size][0] -= 1;
+		break;
+	case RIGHT:
+		new_snake_ptr[snake_size][0] += 1;
+		break;
+	}
+
+	//-----------------------------------------------
+	*snake_ptr = new_snake_ptr;
+
+	return 0;
+}
+
+

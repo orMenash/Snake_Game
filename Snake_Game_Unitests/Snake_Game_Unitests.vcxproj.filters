@@ -24,6 +24,9 @@
     <ClCompile Include="free_snake_tests.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="grow_snake_tests.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="create_snake_tests.h">
@@ -33,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="free_snake_tests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="grow_snake_tests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
