@@ -139,13 +139,17 @@
     <ClCompile Include="create_snake_tests.c" />
     <ClCompile Include="free_snake_tests.c" />
     <ClCompile Include="grow_snake_tests.c" />
+    <ClCompile Include="help_functions.c" />
     <ClCompile Include="Main.c" />
+    <ClCompile Include="move_snake_tests.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="create_snake_tests.h" />
     <ClInclude Include="free_snake_tests.h" />
     <ClInclude Include="grow_snake_tests.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="help_functions.h" />
+    <ClInclude Include="move_snake_tests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

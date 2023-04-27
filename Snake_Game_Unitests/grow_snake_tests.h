@@ -2,12 +2,7 @@
 #ifndef GROW_SNAKE_TEST
 #define GROW_SNAKE_TEST
 #include "Header.h"
-
-//----help functions--------------
-#define BASIC_X 10
-#define BASIC_Y 10
-int are_same_snake(snake_t a, snake_t b, size_t size_snake);
-snake_t get_example_snake_with_2_links(uint8_t x, uint8_t);
+#include "help_functions.h"
 
 
 // --------------test functions--------------

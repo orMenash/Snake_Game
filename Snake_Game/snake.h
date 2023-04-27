@@ -22,5 +22,7 @@ void free_snake(snake_t snake, size_t snake_size);
 // Grows the snake.
 size_t grow_snake(uint8_t*** snake_ptr, size_t snake_size, direction_t direction);
 
+// Move the snake
+void move_snake(snake_t snake, size_t snake_size, direction_t to_where);
 
 #endif // !SNAKE

@@ -27,6 +27,7 @@ void free_snake(snake_t snake, size_t snake_size) {
 	free(snake);
 }
 
+// Grows the snake.
 size_t grow_snake(snake_t* snake_ptr, size_t snake_size, direction_t direction) {
 
 	snake_t new_snake_ptr = NULL;
@@ -45,16 +46,16 @@ size_t grow_snake(snake_t* snake_ptr, size_t snake_size, direction_t direction) 
 
 	switch (direction) {
 	case UP:
-		new_snake_ptr[snake_size][1] -= 1;
+		new_snake_ptr[snake_size][1]--;
 		break;
 	case DOWN:
-		new_snake_ptr[snake_size][1] += 1;
+		new_snake_ptr[snake_size][1]++;
 		break;
 	case LEFT:
-		new_snake_ptr[snake_size][0] -= 1;
+		new_snake_ptr[snake_size][0]--;
 		break;
 	case RIGHT:
-		new_snake_ptr[snake_size][0] += 1;
+		new_snake_ptr[snake_size][0]++;
 		break;
 	}
 
@@ -64,4 +65,30 @@ size_t grow_snake(snake_t* snake_ptr, size_t snake_size, direction_t direction) 
 	return 0;
 }
 
+// Move the snake
+void move_snake(snake_t snake, size_t snake_size, direction_t to_where) {
+	int i;
 
+	for (i = 0; i < snake_size - 1; i++) {
+		snake[i][0] = snake[i + 1][0];
+		snake[i][1] = snake[i + 1][1];
+	}
+
+	switch (to_where){
+	case UP:
+		snake[snake_size - 1][1]--;
+		break;
+	case DOWN:
+		snake[snake_size - 1][1]++;
+		break;
+	case RIGHT:
+		snake[snake_size - 1][0]++;
+		break;
+	case LEFT:
+		snake[snake_size - 1][0]--;
+		break;
+	default:
+		break;
+	}
+
+}

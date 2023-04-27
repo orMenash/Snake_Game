@@ -9,6 +9,7 @@
 #include "create_snake_tests.h"
 #include "free_snake_tests.h"
 #include "grow_snake_tests.h"
+#include "move_snake_tests.h"
 
 // ----- git ----
 // 1. added functionality of <name_function> and several unit tests,   //start function.
@@ -35,6 +36,12 @@ int main() {
 	isOk &= (0 == grow_snake__When_RIGHT());
 	isOk &= (0 == grow_snake__When_LEFT());
 	isOk &= (0 == grow_snake__When_MultipleCalls());
+
+	//-----move_snake tests ---------------
+	isOk &= (0 == move_snake__When_UP());
+	isOk &= (0 == move_snake__When_DOWN());
+	isOk &= (0 == move_snake__When_RIGHT());
+	isOk &= (0 == move_snake__When_LEFT());
 
 	printf("%d\n\n", isOk);
 
