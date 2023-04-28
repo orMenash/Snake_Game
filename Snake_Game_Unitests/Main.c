@@ -30,6 +30,11 @@ int main() {
 	//-----free_snake tests -----------------
 	isOk &= (0 == get_null_snake());
 
+	//----- help funcion are_same_snake tests ---------------
+	isOk &= (0 == are_not_same_snake_test()); 
+	isOk &= (0 == are_same_snake_test());
+	isOk &= (0 == one_snake_is_null());
+
 	//----- grow_snake tests ----------------
 	isOk &= (0 == grow_snake__When_UP());
 	isOk &= (0 == grow_snake__When_DOWN());
@@ -43,8 +48,10 @@ int main() {
 	isOk &= (0 == move_snake__When_RIGHT());
 	isOk &= (0 == move_snake__When_LEFT());
 
-
+	//----- help funcion creat_long_snake tests ---------------
 	isOk &= (0 == create_c_shape_test());
+
+
 
 	printf("%d\n\n", isOk);
 

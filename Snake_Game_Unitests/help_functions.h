@@ -12,8 +12,15 @@ snake_t create_long_snake(uint8_t x, uint8_t y, direction_t* growth_directions, 
 
 
 //---------------testing help funcions--------------------
+// 
+// ----------- create_long_snake tests----------------
+int are_not_same_snake_test();
+int one_snake_is_null();
+int are_same_snake_test();
 
+// ----------- create_long_snake tests---------------
 int create_c_shape_test();
+
 
 
 #endif // !HELP_FUNCIONS

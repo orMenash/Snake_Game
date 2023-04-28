@@ -1,81 +1,88 @@
 #include "move_snake_tests.h"
 
 int move_snake__When_UP() {
-	snake_t uctual;
-	snake_t expected;
-	//Arrang
-	expected = create_snake(10, 9);
-	if (expected == NULL) return 1;
+	int uctual, expected;
 
+	//Arrang
+	snake_t snake_a;
+	snake_t anake_b;
+	anake_b = create_snake(10, 9);
+	if (anake_b == NULL) return 1;
+	expected = 0;
 	//Act
-	uctual = create_snake(10, 10);
-	move_snake(uctual, 1, UP);
+	snake_a = create_snake(10, 10);
+	move_snake(snake_a, 1, UP);
+	uctual = are_same_snake(snake_a, anake_b, 1);
+
+	free_snake(anake_b, 1);
+	free_snake(snake_a, 1);
 
 	//Assert
-	int result = are_same_snake(uctual, expected, 1);
-
-	free_snake(expected, 1);
-	free_snake(uctual, 1);
-
-	return result;
+	return (uctual == expected) ? 0 : 1;
 }
 
 int move_snake__When_DOWN() {
-	snake_t uctual;
-	snake_t expected;
+	int uctual, expected;
+
 	//Arrang
-	expected = create_snake(10, 11);
-	if (expected == NULL) return 1;
+	snake_t snake_a;
+	snake_t anake_b;
+	anake_b = create_snake(10, 11);
+	if (anake_b == NULL) return 1;
+	expected = 0;
 
 	//Act
-	uctual = create_snake(10, 10);
-	move_snake(uctual, 1, DOWN);
+	snake_a = create_snake(10, 10);
+	move_snake(snake_a, 1, DOWN);
+	uctual = are_same_snake(snake_a, anake_b, 1);
+
+	free_snake(anake_b, 1);
+	free_snake(snake_a, 1);
 
 	//Assert
-	int result = are_same_snake(uctual, expected, 1);
-
-	free_snake(expected, 1);
-	free_snake(uctual, 1);
-
-	return result;
+	return (uctual == expected) ? 0 : 1;
 }
 
 int move_snake__When_RIGHT() {
-	snake_t uctual;
-	snake_t expected;
+	int uctual, expected;
+
 	//Arrang
-	expected = create_snake(11, 10);
-	if (expected == NULL) return 1;
+	snake_t snake_a;
+	snake_t anake_b;
+	anake_b = create_snake(11, 10);
+	if (anake_b == NULL) return 1;
+	expected = 0;
 
 	//Act
-	uctual = create_snake(10, 10);
-	move_snake(uctual, 1, RIGHT);
+	snake_a = create_snake(10, 10);
+	move_snake(snake_a, 1, RIGHT);
+	uctual = are_same_snake(snake_a, anake_b, 1);
+
+	free_snake(anake_b, 1);
+	free_snake(snake_a, 1);
 
 	//Assert
-	int result = are_same_snake(uctual, expected, 1);
-
-	free_snake(expected, 1);
-	free_snake(uctual, 1);
-
-	return result;
+	return (uctual == expected) ? 0 : 1;
 }
 
 int move_snake__When_LEFT() {
+	int uctual, expected;
+
 	//Arrang
-	snake_t uctual;
-	snake_t expected;
-	expected = create_snake(9, 10);
-	if (expected == NULL) return 1;
+	snake_t snake_a;
+	snake_t anake_b;
+	anake_b = create_snake(9, 10);
+	if (anake_b == NULL) return 1;
+	expected = 0;
 
 	//Act
-	uctual = create_snake(10, 10);
-	move_snake(uctual, 1, LEFT);
+	snake_a = create_snake(10, 10);
+	move_snake(snake_a, 1, LEFT);
+	uctual = are_same_snake(snake_a, anake_b, 1);
+
+	free_snake(anake_b, 1);
+	free_snake(snake_a, 1);
 
 	//Assert
-	int result = are_same_snake(uctual, expected, 1);
-
-	free_snake(expected, 1);
-	free_snake(uctual, 1);
-
-	return result;
+	return (uctual == expected) ? 0 : 1;
 }
