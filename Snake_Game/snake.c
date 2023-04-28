@@ -90,5 +90,4 @@ void move_snake(snake_t snake, size_t snake_size, direction_t to_where) {
 	default:
 		break;
 	}
-
 }

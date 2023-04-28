@@ -2,8 +2,6 @@
 #ifndef GROW_SNAKE_TEST
 #define GROW_SNAKE_TEST
 #include "Header.h"
-#include "help_functions.h"
-
 
 // --------------test functions--------------
 int grow_snake__When_UP();

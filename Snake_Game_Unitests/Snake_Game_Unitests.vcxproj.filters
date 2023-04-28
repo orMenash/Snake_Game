@@ -30,7 +30,7 @@
     <ClCompile Include="move_snake_tests.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="help_functions.c">
+    <ClCompile Include="auxiliary_functions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,7 +50,7 @@
     <ClInclude Include="move_snake_tests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="help_functions.h">
+    <ClInclude Include="auxiliary_functions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

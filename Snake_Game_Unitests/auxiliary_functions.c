@@ -1,4 +1,4 @@
-#include "help_functions.h"
+#include "auxiliary_functions.h"
 
 // The function return 0 if the snakes are same.
 int are_same_snake(snake_t a, snake_t b, size_t size_snake) {//tofix add testings.
@@ -9,9 +9,12 @@ int are_same_snake(snake_t a, snake_t b, size_t size_snake) {//tofix add testing
 
 	for (i = 0; i < size_snake; i++) {
 		for (j = 0; j < 2; j++) {
+			//printf("(%d = %d), ", a[i][j], b[i][j]); //todebug
 			if (a[i][j] != b[i][j]) return 1;
 		}
+		//printf("\n"); //todebug
 	}
+	//printf("\n\n"); //todebug
 	return 0;
 } 
 
@@ -54,7 +57,7 @@ snake_t create_long_snake(uint8_t x, uint8_t y, direction_t* growth_directions, 
 }
 
 
-//---------------testing help funcions--------------------
+//---------------testing auxiliary functions--------------------
 
 // ----------- create_long_snake tests---------------
 int are_not_same_snake_test() {

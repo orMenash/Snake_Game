@@ -1,6 +1,6 @@
 #pragma once
-#ifndef HELP_FUNCIONS
-#define HELP_FUNCIONS
+#ifndef AUXILIARY_FUNCTIONS
+#define AUXILIARY_FUNCTIONS
 #include "Header.h"
 
 #define BASIC_X 10
@@ -11,7 +11,7 @@ snake_t get_example_snake_with_2_links(uint8_t x, uint8_t);
 snake_t create_long_snake(uint8_t x, uint8_t y, direction_t* growth_directions, size_t num_growth_directions);
 
 
-//---------------testing help funcions--------------------
+//---------------testing auxiliary functions--------------------
 // 
 // ----------- create_long_snake tests----------------
 int are_not_same_snake_test();
@@ -23,5 +23,5 @@ int create_c_shape_test();
 
 
 
-#endif // !HELP_FUNCIONS
+#endif // !AUXILIARY_FUNCTIONS
 
