@@ -61,9 +61,9 @@ int move_snake__When_RIGHT() {
 }
 
 int move_snake__When_LEFT() {
+	//Arrang
 	snake_t uctual;
 	snake_t expected;
-	//Arrang
 	expected = create_snake(9, 10);
 	if (expected == NULL) return 1;
 

@@ -43,6 +43,9 @@ int main() {
 	isOk &= (0 == move_snake__When_RIGHT());
 	isOk &= (0 == move_snake__When_LEFT());
 
+
+	isOk &= (0 == create_c_shape_test());
+
 	printf("%d\n\n", isOk);
 
 	return 0;

@@ -1,6 +1,5 @@
 #include "snake.h"
 
-
 // Creates a snake in coordinate (x,y):
 snake_t create_snake(uint8_t x, uint8_t y) {
 	if (x < 0 || y < 0) return NULL; // If get minus numbers.
@@ -17,6 +16,7 @@ snake_t create_snake(uint8_t x, uint8_t y) {
 
 	return snake;
 }
+
 // Free snake’s memory (remember: it’s a double pointer array!)
 void free_snake(snake_t snake, size_t snake_size) {
 	int i;
