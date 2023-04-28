@@ -91,3 +91,25 @@ void move_snake(snake_t snake, size_t snake_size, direction_t to_where) {
 		break;
 	}
 }
+
+bool will_snake_reach_food_on_next_move(snake_t snake, size_t snake_size, uint8_t* food, direction_t direction) {
+	uint8_t* head = snake[snake_size - 1];
+	switch (direction)
+	{
+	case UP:
+		return ( (head[0] == food[0]) && ( (head[1] - 1) == food[1]) );
+		break;
+	case DOWN:
+		return ( (head[0] == food[0]) && ( (head[1] + 1) == food[1]) );
+		break;
+	case LEFT:
+		return ( ( (head[0] - 1) == food[0]) && (head[1] == food[1]) );
+		break;
+	case RIGHT:
+		return ( ( (head[0] + 1) == food[0]) && (head[1] == food[1]) );
+		break;
+	default:
+		return false;
+		break;
+	}
+}

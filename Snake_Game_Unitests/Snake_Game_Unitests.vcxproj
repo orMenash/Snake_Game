@@ -142,6 +142,7 @@
     <ClCompile Include="auxiliary_functions.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="move_snake_tests.c" />
+    <ClCompile Include="will_snake_reach_food_on_next_move_test.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="create_snake_tests.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="Header.h" />
     <ClInclude Include="auxiliary_functions.h" />
     <ClInclude Include="move_snake_tests.h" />
+    <ClInclude Include="will_snake_reach_food_on_next_move_test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

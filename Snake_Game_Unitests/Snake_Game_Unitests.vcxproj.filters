@@ -33,6 +33,9 @@
     <ClCompile Include="auxiliary_functions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="will_snake_reach_food_on_next_move_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="create_snake_tests.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="auxiliary_functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="will_snake_reach_food_on_next_move_test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

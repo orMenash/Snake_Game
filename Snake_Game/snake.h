@@ -25,4 +25,7 @@ size_t grow_snake(uint8_t*** snake_ptr, size_t snake_size, direction_t direction
 // Move the snake
 void move_snake(snake_t snake, size_t snake_size, direction_t to_where);
 
+// Returns true if snakes will reach food after a single move in the // given direction.
+bool will_snake_reach_food_on_next_move(snake_t snake, size_t snake_size, uint8_t* food, direction_t direction);
+
 #endif // !SNAKE

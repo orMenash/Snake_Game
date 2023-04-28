@@ -10,6 +10,7 @@
 #include "free_snake_tests.h"
 #include "grow_snake_tests.h"
 #include "move_snake_tests.h"
+#include "will_snake_reach_food_on_next_move_test.h"
 
 // ----- git ----
 // 1. added functionality of <name_function> and several unit tests,   //start function.
@@ -52,6 +53,11 @@ int main() {
 	isOk &= (0 == create_c_shape_test());
 
 
+	//----- auxiliary functions will_snake_reach_food_on_next_move tests ---------------
+	isOk &= (0 == food_in_left_and_snake_take_right_test());
+	isOk &= (0 == food_in_left_and_snake_take_up_test());
+	isOk &= (0 == food_in_left_and_snake_take_down_test());
+	isOk &= (0 == food_in_left_and_snake_take_left_test());
 
 	printf("%d\n\n", isOk);
 
