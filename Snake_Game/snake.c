@@ -64,6 +64,7 @@ void move_snake(snake_t snake, size_t snake_size, direction_t to_where) {
 	get_head_after_next_move(snake[snake_size - 1], to_where);
 }
 
+// Returns true if snakes will reach food after a single move in the // given direction.
 bool will_snake_reach_food_on_next_move(snake_t snake, size_t snake_size, uint8_t* food, direction_t direction) {
 	uint8_t head[2];
 	head[0] = snake[snake_size - 1][0];
@@ -72,6 +73,7 @@ bool will_snake_reach_food_on_next_move(snake_t snake, size_t snake_size, uint8_
 	return ( (head[0]  == food[0]) && (head[1] == food[1]));
 }
 
+// Changing place head to next move.
 void get_head_after_next_move(uint8_t* head, direction_t direction) {
 	switch (direction)
 	{
@@ -122,4 +124,8 @@ bool will_snake_collide_with_itself_on_next_move(snake_t snake, size_t snake_siz
 
 	return is_food_on_snake(snake, snake_size - 1, head);
 
+}
+
+bool will_snake_collide_border_on_next_move(snake_t snake, size_t snake_size, direction_t direction) {
+	return true;
 }

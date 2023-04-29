@@ -45,6 +45,10 @@ bool is_food_on_snake(snake_t snake, size_t snake_size, uint8_t food[]);
 // Returns true if snakes will bump into itself after a single move in // the given direction.
 bool will_snake_collide_with_itself_on_next_move(snake_t snake, size_t snake_size, direction_t direction);
 
+// Changing place head to next move.
 void get_head_after_next_move(uint8_t* head, direction_t direction);
+
+
+bool will_snake_collide_border_on_next_move(snake_t snake, size_t snake_size, direction_t direction);
 
 #endif // !SNAKE

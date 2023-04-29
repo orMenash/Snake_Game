@@ -37,10 +37,10 @@ void draw_borders() {
 		printf("%c", WALL_COLOR);
 	}
 
-	for (i = 1; i < GAME_HEIGHT - 1; i++) {
-		gotoxy(0, i + 1);
+	for (i = 1; i < GAME_HEIGHT; i++) {
+		gotoxy(0, i);
 		printf("%c", WALL_COLOR);
-		gotoxy(GAME_WIDTH - 1, i + 1);
+		gotoxy(GAME_WIDTH - 1, i);
 		printf("%c", WALL_COLOR);
 	}
 

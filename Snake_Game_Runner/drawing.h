@@ -5,8 +5,8 @@
 #include "../Snake_Game/snake.h"
 
 #define SNAKE_COLOR 178
-#define FOOD_COLOR 219
-#define WALL_COLOR 178 //TOFIX
+#define FOOD_COLOR 254
+#define WALL_COLOR 219//TOFIX
 //#define GAME_WIDTH (30)
 //#define GAME_HEIGHT (30)
 
