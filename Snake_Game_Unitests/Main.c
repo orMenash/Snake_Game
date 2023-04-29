@@ -13,6 +13,7 @@
 #include "will_snake_reach_food_on_next_move_test.h"
 #include "is_food_on_snake_test.h"
 #include "collision_with_itself_test.h"
+#include "collide_border_test.h"
 
 // ----- git ----
 // 1. added functionality of <name_function> and several unit tests,   //start function.
@@ -68,6 +69,17 @@ int main() {
 	//---- collision_with_itself tests-------------------
 	isOk &= (0 == snake_collision_with_itself());
 	isOk &= (0 == snake_not_collision_with_itself());
+
+
+
+	//----- collide_border tests ---------------
+	isOk &= (0 == the_snake_not_collide_border_test());
+	isOk &= (0 == the_snake_collide_left_border_test());
+	isOk &= (0 == the_snake_collide_up_border_test());
+	isOk &= (0 == the_snake_collide_down_border_test());
+	isOk &= (0 == the_snake_collide_right_border_test());
+
+
 
 	printf("%d\n\n", isOk);
 

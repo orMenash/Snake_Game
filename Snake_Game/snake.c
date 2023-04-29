@@ -127,5 +127,13 @@ bool will_snake_collide_with_itself_on_next_move(snake_t snake, size_t snake_siz
 }
 
 bool will_snake_collide_border_on_next_move(snake_t snake, size_t snake_size, direction_t direction) {
-	return true;
+	uint8_t head[2];
+	head[0] = snake[snake_size - 1][0];
+	head[1] = snake[snake_size - 1][1];
+	get_head_after_next_move(head, direction);
+
+	printf("x = %d, y = %d\n", head[0], head[1]);
+
+	if (head[0] == 0 || head[0] == GAME_WIDTH || head[1] == 0 || head[1] == GAME_HEIGHT) return true;
+	return false;
 }
