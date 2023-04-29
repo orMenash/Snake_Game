@@ -10,8 +10,8 @@
 
 #define snake_t uint8_t**
 #define direction_t enum directions_enum
-#define BOARD_WIDTH 10
-#define BOARD_HEIGHT 20
+#define GAME_WIDTH (80)
+#define GAME_HEIGHT (40)
 #define BOARD_WIDTH_SPACE 0 
 #define BOARD_HEIGHT_SPACE 0 
 
@@ -45,6 +45,6 @@ bool is_food_on_snake(snake_t snake, size_t snake_size, uint8_t food[]);
 // Returns true if snakes will bump into itself after a single move in // the given direction.
 bool will_snake_collide_with_itself_on_next_move(snake_t snake, size_t snake_size, direction_t direction);
 
-void get_head_after_next_move(uint8_t* head, direction_t direction);//tofix
+void get_head_after_next_move(uint8_t* head, direction_t direction);
 
 #endif // !SNAKE

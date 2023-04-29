@@ -1,7 +1,7 @@
 #include "auxiliary_functions.h"
 
 // The function return 0 if the snakes are same.
-int are_same_snake(snake_t a, snake_t b, size_t size_snake) {//tofix add testings.
+int are_same_snake(snake_t a, snake_t b, size_t size_snake) {
 	int i, j;
 
 	if (a == NULL && b == NULL) return 0;

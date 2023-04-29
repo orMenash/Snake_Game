@@ -98,8 +98,8 @@ uint8_t random_number_btween_min_to_max(int min, int max) {
 // Setting a new food loction.
 void set_new_food_location(snake_t snake, size_t snake_size, uint8_t food[]) {
 	do {
-		food[0] = random_number_btween_min_to_max(0, BOARD_WIDTH) + BOARD_WIDTH_SPACE;
-		food[1] = random_number_btween_min_to_max(0, BOARD_HEIGHT) + BOARD_HEIGHT_SPACE;
+		food[0] = random_number_btween_min_to_max(0, GAME_WIDTH) + BOARD_WIDTH_SPACE;
+		food[1] = random_number_btween_min_to_max(0, GAME_HEIGHT) + BOARD_HEIGHT_SPACE;
 	} while (true == is_food_on_snake(snake, snake_size, food));
 }
 
