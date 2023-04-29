@@ -26,6 +26,8 @@
 // 6. Refactored the code.											//refactor
 
 int main() {
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); //tofix in linux need to remove.
+
 	printf("tests are starting\n\n");
 	//---- creat_snake tests ----------------
 	bool isOk = 1;

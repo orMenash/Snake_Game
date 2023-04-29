@@ -22,7 +22,7 @@ void free_snake(snake_t snake, size_t snake_size) {
 	int i;
 	if (snake == NULL) return;
 	for (i = 0; i < snake_size; i++) {
-		free(*(snake + i));
+		free(snake[i]);
 	}
 	free(snake);
 }
@@ -47,9 +47,9 @@ size_t grow_snake(snake_t* snake_ptr, size_t snake_size, direction_t direction) 
 	get_head_after_next_move(new_snake_ptr[snake_size], direction);
 
 	//-----------------------------------------------
-	*snake_ptr = new_snake_ptr;
 
-	return 0;
+	*snake_ptr = new_snake_ptr;
+	return snake_size + 1;
 }
 
 // Move the snake
@@ -100,8 +100,8 @@ uint8_t random_number_btween_min_to_max(int min, int max) {
 // Setting a new food loction.
 void set_new_food_location(snake_t snake, size_t snake_size, uint8_t food[]) {
 	do {
-		food[0] = random_number_btween_min_to_max(0, GAME_WIDTH) + BOARD_WIDTH_SPACE;
-		food[1] = random_number_btween_min_to_max(0, GAME_HEIGHT) + BOARD_HEIGHT_SPACE;
+		food[0] = random_number_btween_min_to_max(0 + 1, GAME_WIDTH - 1) + BOARD_WIDTH_SPACE;
+		food[1] = random_number_btween_min_to_max(0 + 1, GAME_HEIGHT - 1) + BOARD_HEIGHT_SPACE;
 	} while (true == is_food_on_snake(snake, snake_size, food));
 }
 
@@ -153,4 +153,8 @@ bool can_snake_move_in_direction(direction_t current_direction, direction_t requ
 		break;
 	}
 	return true;
+}
+
+bool will_snake_colide(snake_t snake, size_t snake_size, direction_t direction) {
+	return will_snake_collide_with_itself_on_next_move(snake, snake_size, direction) || will_snake_collide_border_on_next_move(snake, snake_size, direction);
 }

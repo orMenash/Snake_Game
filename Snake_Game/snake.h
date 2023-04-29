@@ -8,6 +8,10 @@
 #include <string.h>
 #include <time.h>
 
+#define _CRT_SECURE_NO_WARNINGS //tofix in linux need to remove.
+#define _CRTDBG_MAP_ALLOC //tofix in linux need to remove.
+#include <crtdbg.h> //tofix in linux need to remove.
+
 #define snake_t uint8_t**
 #define direction_t enum directions_enum
 #define GAME_WIDTH (80)
@@ -50,6 +54,8 @@ void get_head_after_next_move(uint8_t* head, direction_t direction);
 
 
 bool will_snake_collide_border_on_next_move(snake_t snake, size_t snake_size, direction_t direction);
+
+bool will_snake_colide(snake_t snake, size_t snake_size, direction_t direction);
 
 bool can_snake_move_in_direction(direction_t current_direction, direction_t requested_direction);
 

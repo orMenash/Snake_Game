@@ -20,8 +20,8 @@ int move_snake__When_UP() {
 	move_snake(snake_a, 6, UP);
 	uctual = are_same_snake(snake_a, snake_b, 6);
 
-	free_snake(snake_b, 1);
-	free_snake(snake_a, 1);
+	free_snake(snake_b, 6);
+	free_snake(snake_a, 6);
 
 	//Assert
 	return (uctual == expected) ? 0 : 1;
@@ -48,8 +48,8 @@ int move_snake__When_DOWN() {
 	move_snake(snake_a, 6, DOWN);
 	uctual = are_same_snake(snake_a, snake_b, 6);
 
-	free_snake(snake_b, 1);
-	free_snake(snake_a, 1);
+	free_snake(snake_b, 6);
+	free_snake(snake_a, 6);
 
 	//Assert
 	return (uctual == expected) ? 0 : 1;
@@ -76,8 +76,8 @@ int move_snake__When_RIGHT() {
 	move_snake(snake_a, 6, RIGHT);
 	uctual = are_same_snake(snake_a, snake_b, 6);
 
-	free_snake(snake_b, 1);
-	free_snake(snake_a, 1);
+	free_snake(snake_b, 6);
+	free_snake(snake_a, 6);
 
 	//Assert
 	return (uctual == expected) ? 0 : 1;
@@ -104,8 +104,8 @@ int move_snake__When_LEFT() {
 	move_snake(snake_a, 6, LEFT);
 	uctual = are_same_snake(snake_a, snake_b, 6);
 
-	free_snake(snake_b, 1);
-	free_snake(snake_a, 1);
+	free_snake(snake_b, 6);
+	free_snake(snake_a, 6);
 
 	//Assert
 	return (uctual == expected) ? 0 : 1;

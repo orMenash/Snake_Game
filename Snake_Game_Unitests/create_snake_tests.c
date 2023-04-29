@@ -2,6 +2,7 @@
 
 
 int what_return_when_get_good_numbers() {
+	bool result;
 	//Arrange
 	int x = 2;
 	int y = 4;
@@ -16,5 +17,9 @@ int what_return_when_get_good_numbers() {
 	snake_t uctual = create_snake(x, y);
 
 	//Assert
-	return ( (  (*expected)[0] == (*uctual)[0] ) && ( (*expected)[1] == (*uctual)[1] ) ) ? 0 : 1;
+	result = (((*expected)[0] == (*uctual)[0]) && ((*expected)[1] == (*uctual)[1])) ? 0 : 1;
+	free_snake(uctual, 1);
+	free_snake(expected, 1);
+
+	return result;
 }

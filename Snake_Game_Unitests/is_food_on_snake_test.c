@@ -10,6 +10,7 @@ int food_on_snake() {
 
 	//Act
 	uctual = is_food_on_snake(snake, 3, food);
+	free_snake(snake, 3);
 
 	//Assert
 	return (expected == uctual) ? 0 : 1;
@@ -25,6 +26,7 @@ int food_not_on_snake() {
 
 	//Act
 	uctual = is_food_on_snake(snake, 3, food);
+	free_snake(snake, 3);
 
 	//Assert
 	return (expected == uctual) ? 0 : 1;

@@ -8,6 +8,7 @@ int  the_snake_collide_left_border_test() {
 
 	//Act
 	uctual = will_snake_collide_border_on_next_move(snake, 1, LEFT);
+	free_snake(snake, 1);
 
 	//Assert
 	return (expected == uctual) ? 0 : 1;
@@ -21,6 +22,7 @@ int  the_snake_collide_up_border_test() {
 
 	//Act
 	uctual = will_snake_collide_border_on_next_move(snake, 1, UP);
+	free_snake(snake, 1);
 
 	//Assert
 	return (expected == uctual) ? 0 : 1;
@@ -34,6 +36,7 @@ int  the_snake_collide_down_border_test() {
 
 	//Act
 	uctual = will_snake_collide_border_on_next_move(snake, 1, DOWN);
+	free_snake(snake, 1);
 
 	//Assert
 	return (expected == uctual) ? 0 : 1;
@@ -47,6 +50,7 @@ int  the_snake_collide_right_border_test() {
 
 	//Act
 	uctual = will_snake_collide_border_on_next_move(snake, 1, RIGHT);
+	free_snake(snake, 1);
 
 	//Assert
 	return (expected == uctual) ? 0 : 1;
@@ -60,6 +64,7 @@ int  the_snake_not_collide_border_test() {
 
 	//Act
 	uctual = will_snake_collide_border_on_next_move(snake, 1, RIGHT);
+	free_snake(snake, 1);
 
 	//Assert
 	return (expected == uctual) ? 0 : 1;

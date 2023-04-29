@@ -9,6 +9,7 @@ int snake_collision_with_itself() {
 
 	//Act
 	uctual = will_snake_collide_with_itself_on_next_move(snake, 6, LEFT);
+	free_snake(snake, 6);
 
 	//Assert
 	return (expected == uctual) ? 0 : 1;
@@ -23,6 +24,7 @@ int snake_not_collision_with_itself() {
 
 	//Act
 	uctual = will_snake_collide_with_itself_on_next_move(snake, 6, DOWN);
+	free_snake(snake, 6);
 
 	//Assert
 	return (expected == uctual) ? 0 : 1;

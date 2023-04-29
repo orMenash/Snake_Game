@@ -22,7 +22,7 @@ void clear_snake(snake_t snake, size_t snake_size) {
 	if (snake == NULL)return;
 	for (i = 0; i < snake_size; i++) {
 		gotoxy(snake[i][0], snake[i][1]);
-		printf("%c", 0);
+		printf("%c", 176);
 	}
 }
 

@@ -12,6 +12,7 @@ int food_in_left_and_snake_take_right_test() {
 
 	//Act
 	uctual = will_snake_reach_food_on_next_move(snake, 3, food, RIGHT);
+	free_snake(snake, 3);
 
 	//Assert
 	return (uctual == expected) ? 0 : 1;
@@ -29,6 +30,7 @@ int food_in_left_and_snake_take_up_test() {
 
 	//Act
 	uctual = will_snake_reach_food_on_next_move(snake, 3, food, UP);
+	free_snake(snake, 3);
 
 	//Assert
 	return (uctual == expected) ? 0 : 1;
@@ -46,6 +48,7 @@ int food_in_left_and_snake_take_down_test() {
 
 	//Act
 	uctual = will_snake_reach_food_on_next_move(snake, 3, food, DOWN);
+	free_snake(snake, 3);
 
 	//Assert
 	return (uctual == expected) ? 0 : 1;
@@ -63,6 +66,7 @@ int food_in_left_and_snake_take_left_test() {
 
 	//Act
 	uctual = will_snake_reach_food_on_next_move(snake, 3, food, LEFT);
+	free_snake(snake, 3);
 
 	//Assert
 	return (uctual == expected) ? 0 : 1;

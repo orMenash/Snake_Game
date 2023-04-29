@@ -6,7 +6,7 @@
 
 #define SNAKE_COLOR 178
 #define FOOD_COLOR 254
-#define WALL_COLOR 219//TOFIX
+#define WALL_COLOR 219
 //#define GAME_WIDTH (30)
 //#define GAME_HEIGHT (30)
 

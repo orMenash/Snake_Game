@@ -118,23 +118,10 @@ int create_c_shape_test() {
 	snake_b = create_snake(10, 10);
 	if (snake_b == NULL)return 1;
 	
-	if (1 == grow_snake(&snake_b, 1, LEFT)) {
-		free_snake(snake_b, 1);
-		return 1;
-	}
-	if (1 == grow_snake(&snake_b, 2, UP)) {
-		free_snake(snake_b, 1);
-		return 1;
-	}
-	if (1 == grow_snake(&snake_b, 3, UP)) {
-		free_snake(snake_b, 1);
-		return 1;
-	}
-	if (1 == grow_snake(&snake_b, 4, RIGHT)) {
-		free_snake(snake_b, 1);
-		return 1;
-	}
-
+	grow_snake(&snake_b, 1, LEFT);
+	grow_snake(&snake_b, 2, UP);
+	grow_snake(&snake_b, 3, UP);
+	grow_snake(&snake_b, 4, RIGHT);
 	expected = 0;
 
 	//Act
@@ -142,8 +129,8 @@ int create_c_shape_test() {
 	
 	uctual = are_same_snake(snake_a, snake_b, 1);
 
-	free_snake(snake_b, 1);
-	free_snake(snake_a, 1);
+	free_snake(snake_b, 5);
+	free_snake(snake_a, 5);
 
 	//Assert
 	return (uctual == expected) ? 0 : 1;
