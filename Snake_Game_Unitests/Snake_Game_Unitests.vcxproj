@@ -140,6 +140,7 @@
     <ClCompile Include="free_snake_tests.c" />
     <ClCompile Include="grow_snake_tests.c" />
     <ClCompile Include="auxiliary_functions.c" />
+    <ClCompile Include="is_food_on_snake_test.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="move_snake_tests.c" />
     <ClCompile Include="will_snake_reach_food_on_next_move_test.c" />
@@ -150,6 +151,7 @@
     <ClInclude Include="grow_snake_tests.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="auxiliary_functions.h" />
+    <ClInclude Include="is_food_on_snake_test.h" />
     <ClInclude Include="move_snake_tests.h" />
     <ClInclude Include="will_snake_reach_food_on_next_move_test.h" />
   </ItemGroup>
