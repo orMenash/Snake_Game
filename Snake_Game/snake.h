@@ -6,9 +6,14 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
+#include <time.h>
 
 #define snake_t uint8_t**
 #define direction_t enum directions_enum
+#define BOARD_WIDTH 10
+#define BOARD_HEIGHT 20
+#define BOARD_WIDTH_SPACE 0 
+#define BOARD_HEIGHT_SPACE 0 
 
 enum directions_enum { UP, DOWN, LEFT, RIGHT };
 
@@ -27,5 +32,14 @@ void move_snake(snake_t snake, size_t snake_size, direction_t to_where);
 
 // Returns true if snakes will reach food after a single move in the // given direction.
 bool will_snake_reach_food_on_next_move(snake_t snake, size_t snake_size, uint8_t* food, direction_t direction);
+
+// Creating random number between minimum to maximum number.
+uint8_t random_number_btween_min_to_max();
+
+// Setting a new food loction.
+void set_new_food_location(snake_t snake, uint8_t snake_size, uint8_t food[]);
+
+// Makes sure the new food doesn't "land on the snake".
+bool is_food_on_snake(snake_t snake, uint8_t size_snake, uint8_t food[]);
 
 #endif // !SNAKE

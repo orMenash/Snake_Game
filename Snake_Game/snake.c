@@ -113,3 +113,25 @@ bool will_snake_reach_food_on_next_move(snake_t snake, size_t snake_size, uint8_
 		break;
 	}
 }
+
+// Creating random number between minimum to maximum number.
+uint8_t random_number_btween_min_to_max(int min, int max) {
+	return (uint8_t)(rand() % (max - min)) + min;
+}
+
+// Setting a new food loction.
+void set_new_food_location(snake_t snake, uint8_t snake_size, uint8_t food[]) {
+	do {
+		food[0] = random_number_btween_min_to_max(0, BOARD_WIDTH) + BOARD_WIDTH_SPACE;
+		food[1] = random_number_btween_min_to_max(0, BOARD_HEIGHT) + BOARD_HEIGHT_SPACE;
+	} while (true == is_food_on_snake(snake, snake_size, food));
+}
+
+// Makes sure the new food doesn't "land on the snake".
+bool is_food_on_snake(snake_t snake, uint8_t size_snake, uint8_t food[]) {
+	int i;
+	for (i = 0; i < size_snake; i++) {
+		if (snake[i][0] == food[0] && snake[i][1] == food[1]) return true;
+	}
+	return false;
+}
