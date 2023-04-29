@@ -44,20 +44,7 @@ size_t grow_snake(snake_t* snake_ptr, size_t snake_size, direction_t direction) 
 	new_snake_ptr[snake_size][0] = new_snake_ptr[snake_size - 1][0];
 	new_snake_ptr[snake_size][1] = new_snake_ptr[snake_size - 1][1];
 
-	switch (direction) {
-	case UP:
-		new_snake_ptr[snake_size][1]--;
-		break;
-	case DOWN:
-		new_snake_ptr[snake_size][1]++;
-		break;
-	case LEFT:
-		new_snake_ptr[snake_size][0]--;
-		break;
-	case RIGHT:
-		new_snake_ptr[snake_size][0]++;
-		break;
-	}
+	get_head_after_next_move(new_snake_ptr[snake_size], direction);
 
 	//-----------------------------------------------
 	*snake_ptr = new_snake_ptr;
@@ -74,42 +61,47 @@ void move_snake(snake_t snake, size_t snake_size, direction_t to_where) {
 		snake[i][1] = snake[i + 1][1];
 	}
 
-	switch (to_where){
-	case UP:
-		snake[snake_size - 1][1]--;
-		break;
-	case DOWN:
-		snake[snake_size - 1][1]++;
-		break;
-	case RIGHT:
-		snake[snake_size - 1][0]++;
-		break;
-	case LEFT:
-		snake[snake_size - 1][0]--;
-		break;
-	default:
-		break;
-	}
+	get_head_after_next_move(snake[snake_size - 1], to_where);
+	//switch (to_where){
+	//case UP:
+	//	snake[snake_size - 1][1]--;
+	//	break;
+	//case DOWN:
+	//	snake[snake_size - 1][1]++;
+	//	break;
+	//case RIGHT:
+	//	snake[snake_size - 1][0]++;
+	//	break;
+	//case LEFT:
+	//	snake[snake_size - 1][0]--;
+	//	break;
+	//default:
+	//	break;
+	//}
 }
 
 bool will_snake_reach_food_on_next_move(snake_t snake, size_t snake_size, uint8_t* food, direction_t direction) {
-	uint8_t* head = snake[snake_size - 1];
+	uint8_t head[2];
+	head[0] = snake[snake_size - 1][0];
+	head[1] = snake[snake_size - 1][1];
+	get_head_after_next_move(head, direction);
+	return ( (head[0]  == food[0]) && (head[1] == food[1]));
+}
+
+void get_head_after_next_move(uint8_t* head, direction_t direction) {
 	switch (direction)
 	{
 	case UP:
-		return ( (head[0] == food[0]) && ( (head[1] - 1) == food[1]) );
+		head[1]--;
 		break;
 	case DOWN:
-		return ( (head[0] == food[0]) && ( (head[1] + 1) == food[1]) );
+		head[1]++;
 		break;
 	case LEFT:
-		return ( ( (head[0] - 1) == food[0]) && (head[1] == food[1]) );
+		head[0]--;
 		break;
 	case RIGHT:
-		return ( ( (head[0] + 1) == food[0]) && (head[1] == food[1]) );
-		break;
-	default:
-		return false;
+		head[0]++;
 		break;
 	}
 }
@@ -128,10 +120,30 @@ void set_new_food_location(snake_t snake, uint8_t snake_size, uint8_t food[]) {
 }
 
 // Makes sure the new food doesn't "land on the snake".
-bool is_food_on_snake(snake_t snake, uint8_t size_snake, uint8_t food[]) {
+bool is_food_on_snake(snake_t snake, uint8_t size_snake, uint8_t* food) {
 	int i;
 	for (i = 0; i < size_snake; i++) {
 		if (snake[i][0] == food[0] && snake[i][1] == food[1]) return true;
 	}
 	return false;
+}
+
+// Returns true if snakes will bump into itself after a single move in // the given direction.
+bool will_snake_collide_with_itself_on_next_move(snake_t snake, size_t snake_size, direction_t direction) {
+	//uint8_t head = snake[snake_size - 1];
+	//switch (direction)
+	//{
+	//case UP:
+	//	break;
+	//case DOWN:
+	//	break;
+	//case LEFT:
+	//	break;
+	//case RIGHT:
+	//	break;
+	//default:
+	//	break;
+	//}
+	//return is_food_on_snake(snake, snake_size - 1, snake[snake_size - 1]);
+	return true;
 }

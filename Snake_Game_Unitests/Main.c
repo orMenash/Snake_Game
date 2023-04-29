@@ -12,6 +12,7 @@
 #include "move_snake_tests.h"
 #include "will_snake_reach_food_on_next_move_test.h"
 #include "is_food_on_snake_test.h"
+#include "collision_with_itself_test.h"
 
 // ----- git ----
 // 1. added functionality of <name_function> and several unit tests,   //start function.
@@ -63,6 +64,10 @@ int main() {
 	//---- is_food_on_snake tests-------------------
 	isOk &= (0 == food_on_snake());
 	isOk &= (0 == food_not_on_snake());
+
+	//---- collision_with_itself tests-------------------
+	//isOk &= (0 == snake_collision_with_itself());
+	//isOk &= (0 == snake_not_collision_with_itself());
 
 	printf("%d\n\n", isOk);
 
