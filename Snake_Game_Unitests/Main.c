@@ -14,6 +14,7 @@
 #include "is_food_on_snake_test.h"
 #include "collision_with_itself_test.h"
 #include "collide_border_test.h"
+#include "move_in_direction.h"
 
 // ----- git ----
 // 1. added functionality of <name_function> and several unit tests,   //start function.
@@ -79,7 +80,12 @@ int main() {
 	isOk &= (0 == the_snake_collide_down_border_test());
 	isOk &= (0 == the_snake_collide_right_border_test());
 
-
+	//-----move_direction tests ---------------
+	isOk &= (0 == up_to_right());
+	isOk &= (0 == right_to_left());
+	isOk &= (0 == left_to_right());
+	isOk &= (0 == down_to_up());
+	isOk &= (0 == up_to_down());
 
 	printf("%d\n\n", isOk);
 

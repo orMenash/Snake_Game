@@ -45,6 +45,9 @@
     <ClCompile Include="collide_border_test.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="move_in_direction.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="create_snake_tests.h">
@@ -75,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="collide_border_test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="move_in_direction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

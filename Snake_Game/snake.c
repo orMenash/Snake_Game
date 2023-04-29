@@ -132,8 +132,25 @@ bool will_snake_collide_border_on_next_move(snake_t snake, size_t snake_size, di
 	head[1] = snake[snake_size - 1][1];
 	get_head_after_next_move(head, direction);
 
-	printf("x = %d, y = %d\n", head[0], head[1]);
-
 	if (head[0] == 0 || head[0] == GAME_WIDTH || head[1] == 0 || head[1] == GAME_HEIGHT) return true;
 	return false;
+}
+
+bool can_snake_move_in_direction(direction_t current_direction, direction_t requested_direction) {
+	switch (current_direction)
+	{
+	case UP:
+		if (requested_direction == DOWN) return false;
+		break;
+	case DOWN:
+		if (requested_direction == UP) return false;
+		break;
+	case LEFT:
+		if (requested_direction == RIGHT) return false;
+		break;
+	case RIGHT:
+		if (requested_direction == LEFT) return false;
+		break;
+	}
+	return true;
 }
