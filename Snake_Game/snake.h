@@ -37,10 +37,10 @@ bool will_snake_reach_food_on_next_move(snake_t snake, size_t snake_size, uint8_
 uint8_t random_number_btween_min_to_max();
 
 // Setting a new food loction.
-void set_new_food_location(snake_t snake, uint8_t snake_size, uint8_t food[]);
+void set_new_food_location(snake_t snake, size_t snake_size, uint8_t food[]);
 
 // Makes sure the new food doesn't "land on the snake".
-bool is_food_on_snake(snake_t snake, uint8_t size_snake, uint8_t food[]);
+bool is_food_on_snake(snake_t snake, size_t snake_size, uint8_t food[]);
 
 // Returns true if snakes will bump into itself after a single move in // the given direction.
 bool will_snake_collide_with_itself_on_next_move(snake_t snake, size_t snake_size, direction_t direction);

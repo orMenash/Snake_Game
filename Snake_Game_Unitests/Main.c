@@ -66,8 +66,8 @@ int main() {
 	isOk &= (0 == food_not_on_snake());
 
 	//---- collision_with_itself tests-------------------
-	//isOk &= (0 == snake_collision_with_itself());
-	//isOk &= (0 == snake_not_collision_with_itself());
+	isOk &= (0 == snake_collision_with_itself());
+	isOk &= (0 == snake_not_collision_with_itself());
 
 	printf("%d\n\n", isOk);
 
