@@ -1,4 +1,8 @@
 x64
 .vs
 Build
+<<<<<<< HEAD
 Debug
+=======
+Debug
+>>>>>>> 0d5f720a1a9be3cd4cecc7d37cec16dad475a20a
