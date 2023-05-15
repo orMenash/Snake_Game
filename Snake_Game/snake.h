@@ -14,8 +14,8 @@
 
 #define snake_t uint8_t**
 #define direction_t enum directions_enum
-#define GAME_WIDTH (80)
-#define GAME_HEIGHT (40)
+#define GAME_WIDTH (40)
+#define GAME_HEIGHT (20)
 #define BOARD_WIDTH_SPACE 0 
 #define BOARD_HEIGHT_SPACE 0 
 

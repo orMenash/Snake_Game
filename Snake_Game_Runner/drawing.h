@@ -4,8 +4,8 @@
 #include <windows.h> 
 #include "../Snake_Game/snake.h"
 
-#define SNAKE_COLOR 178
-#define FOOD_COLOR 254
+#define SNAKE_COLOR 254
+#define FOOD_COLOR 240
 #define WALL_COLOR 219
 //#define GAME_WIDTH (30)
 //#define GAME_HEIGHT (30)
